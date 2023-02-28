@@ -4,6 +4,7 @@ __DebugOnly = false
 EditorGroups
 {
 	Starfleet = "Starfleet Modules"
+	Borg = "Borg Modules"
 }
 
 Inputs

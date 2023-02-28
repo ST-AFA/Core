@@ -1,6 +1,6 @@
 ID = "st-afa.001_coremod"
 Name = "ST-AFA - Core"
-Version = 0.2.0
+Version = 0.2.1
 CompatibleGameVersions = ["0.21.0"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
@@ -32,6 +32,26 @@ Actions
 				Texture
 				{
 					File = "images/starfleet.png"
+					MipLevels = 2
+					SampleMode = Linear
+				}
+			}
+		}
+	}
+	{
+		Action = Add
+		AddTo = "<gui/game/designer/editor_groups.rules>"
+		Name = "Borg"
+		CreateIfNotExisting = true
+		IgnoreIfNotExisting = true
+		ToAdd
+		{
+			NameKey = "EditorGroups/Borg"	// to be changed to Starfleet
+			Icon
+			{
+				Texture
+				{
+					File = "images/borg.png"
 					MipLevels = 2
 					SampleMode = Linear
 				}
