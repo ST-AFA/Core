@@ -84,6 +84,24 @@ Actions
         AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
         ToAdd
         {
+            Category = "uses_torpedos"
+            Max = 4
+        }
+    }
+	{
+        Action = Add
+        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+        ToAdd
+        {
+            Category = "uses_torpedos_deck"
+            Max = 4
+        }
+    }
+	{
+        Action = Add
+        AddTo = "<ships/terran/terran.rules>/Terran/CategoryLimits"
+        ToAdd
+        {
             Category = "shieldcore"
             Max = 1
         }
