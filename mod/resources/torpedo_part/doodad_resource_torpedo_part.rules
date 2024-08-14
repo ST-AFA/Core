@@ -1,4 +1,4 @@
-ID = nexusmods.resource_torpedo_part
+ID = stafa.resource_torpedo_part
 Type = Resource
 DescriptionKey = "Resource/TorpedoPart"
 CategoryKey = "Doodads/Resources"

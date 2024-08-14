@@ -1,7 +1,7 @@
 ID = "st-afa.001_coremod"
 Name = "ST-AFA - Core"
-Version = 0.2.1
-CompatibleGameVersions = ["0.23.0"]
+Version = 0.2.2
+CompatibleGameVersions = ["0.27.0e"]
 ModifiesMultiplayer = true
 Author = "ST-AFA Mod-Team"
 Logo = logo.png
@@ -41,17 +41,17 @@ Actions
 	{
 		Action = Add
 		AddTo = "<gui/game/designer/editor_groups.rules>"
-		Name = "Borg"
+		Name = "Klingon"
 		CreateIfNotExisting = true
 		IgnoreIfNotExisting = true
 		ToAdd
 		{
-			NameKey = "EditorGroups/Borg"	// to be changed to Starfleet
+			NameKey = "EditorGroups/Klingon"
 			Icon
 			{
 				Texture
 				{
-					File = "images/borg.png"
+					File = "images/klingon.png"
 					MipLevels = 2
 					SampleMode = Linear
 				}
@@ -76,7 +76,7 @@ Actions
         ToAdd
         {
             Category = "warpcore"
-            Max = 1
+            Max = 1000
         }
     }
 	{
@@ -85,7 +85,7 @@ Actions
         ToAdd
         {
             Category = "uses_torpedos"
-            Max = 4
+            Max = 1000
         }
     }
 	{
@@ -94,7 +94,7 @@ Actions
         ToAdd
         {
             Category = "uses_torpedos_deck"
-            Max = 4
+            Max = 1000
         }
     }
 	{
@@ -103,7 +103,7 @@ Actions
         ToAdd
         {
             Category = "shieldcore"
-            Max = 1
+            Max = 1000
         }
     }
 	{
@@ -112,7 +112,7 @@ Actions
         ToAdd
         {
             Category = "nacelle"
-            Max = 2
+            Max = 1000
         }
     }
 	{
@@ -121,7 +121,7 @@ Actions
         ToAdd
         {
             Category = "readyroom"
-            Max = 1
+            Max = 1000
         }
     }
 	{
@@ -190,7 +190,7 @@ Actions
 	{
 		Action = Overrides
 		OverrideIn = "<./Data/buffs/buffs.rules>"
-		Overrides = &<buffs.rules>
+		Overrides = &<buffs/buffs.rules>
 	}
 	{
 		Action = Add
@@ -233,16 +233,16 @@ Actions
 		AddTo = "<doodads/doodads.rules>/Doodads"
 		ManyToAdd = &<doodads/doodads.rules>/Doodads
 	}
-	{
-		Action = AddMany
-		AddTo = "<modes/career/career.rules>/TradeRoutes/StationResourceTradeDeltas"
-		ManyToAdd
-		[
-			{ ResourceType=antimatter;  		DesiredDelta=[-10, 10]; }
-			{ ResourceType=dilithium; 			DesiredDelta=[-10, 10]; }
-			{ ResourceType=torpedo_part;        DesiredDelta=[-25, 25]; }
-		]
-	}
+//	{
+//		Action = AddMany
+//		AddTo = "<modes/career/career.rules>/TradeRoutes/StationResourceTradeDeltas"
+//		ManyToAdd
+//		[
+//			{ ResourceType=antimatter;  		DesiredDelta=[-10, 10]; }
+//			{ ResourceType=dilithium; 			DesiredDelta=[-10, 10]; }
+//			{ ResourceType=torpedo_part;        DesiredDelta=[-25, 25]; }
+//		]
+//	}
 	{
 		Action = AddMany
 		AddTo = "<modes/career/career.rules>/BaseTradeShip/ResourcesCarried"

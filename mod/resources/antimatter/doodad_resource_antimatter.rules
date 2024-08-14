@@ -1,4 +1,4 @@
-ID = nexusmods.resource_antimatter
+ID = stafa.resource_antimatter
 Type = Resource
 DescriptionKey = "Resource/Antimatter"
 CategoryKey = "Doodads/Resources"

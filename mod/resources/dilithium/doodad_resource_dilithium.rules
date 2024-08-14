@@ -1,4 +1,4 @@
-ID = nexusmods.resource_dilithium
+ID = stafa.resource_dilithium
 Type = Resource
 DescriptionKey = "Resource/Dilithium"
 CategoryKey = "Doodads/Resources"
