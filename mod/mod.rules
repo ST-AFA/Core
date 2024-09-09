@@ -41,17 +41,17 @@ Actions
 	{
 		Action = Add
 		AddTo = "<gui/game/designer/editor_groups.rules>"
-		Name = "Klingon"
+		Name = "Borg"
 		CreateIfNotExisting = true
 		IgnoreIfNotExisting = true
 		ToAdd
 		{
-			NameKey = "EditorGroups/Klingon"
+			NameKey = "EditorGroups/Borg"	// to be changed to Starfleet
 			Icon
 			{
 				Texture
 				{
-					File = "images/klingon.png"
+					File = "images/borg.png"
 					MipLevels = 2
 					SampleMode = Linear
 				}
@@ -251,6 +251,7 @@ Actions
 			{ ResourceType=antimatter;              RandomWeight=5;  RandomQuantity=[50%, 100%]; }
 			{ ResourceType=dilithium;           	RandomWeight=5;  RandomQuantity=[50%, 100%]; }
 			{ ResourceType=torpedo_part;   			RandomWeight=5;  RandomQuantity=[75%, 100%]; }
+			{ ResourceType=transphasic_torpedo_part;   			RandomWeight=10;  RandomQuantity=[10%, 25%]; }
 		]
 	}
 

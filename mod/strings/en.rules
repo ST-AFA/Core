@@ -53,15 +53,19 @@ Resource
 {
 	Antimatter = "Antimatter"
 	AntimatterPlural = "Antimatter"
-	AntimatterDesc = "Highly instable material, that explodes when it comes into contact with matter, thus has to be stored in magnetic fields."
+	AntimatterDesc = "Highly unstable material, that explodes when it comes into contact with matter, thus it has to be stored in magnetic fields."
 	
 	Dilithium = "Dilithium Crystal"
 	DilithiumPlural = "Dilithium Crystals"
-	DilithiumDesc = "Complex and rare crystal that is needed for matter-antimatter reaction"
+	DilithiumDesc = "Complex and rare crystal that is needed for matter-antimatter reactions"
 	
 	TorpedoPart = "Torpedo Part"
 	TorpedoPartPlural = "Torpedo Parts"
 	TorpedoPartDesc = "Parts for arming torpedo based weapons"
+
+	TransphasicTorpedoPart = "Transphasic Torpedo Part"
+	TransphasicTorpedoPartPlural = "Transphasic Torpedo Parts"
+	TransphasicTorpedoPartDesc = "Parts for the transphasic torpedo"
 }
 
 Parts
@@ -73,6 +77,10 @@ Parts
 	FactoryTorpedoPart = "Torpedo Factory"
 	FactoryTorpedoPartIcon = "Torpedo Factory"
 	FactoryTorpedoPartDesc = "Uses antimatter to create torpedo parts"
+
+	FactoryTransphasicTorpedoPart = "Transphasic Torpedo Factory"
+	FactoryTransphasicTorpedoPartIcon = "Transphasic Torpedo Factory"
+	FactoryTransphasicTorpedoPartDesc = "Manufactures Dangerous Transphasic Torpedo Parts"
 	
 	CrewQuarters3x1 = "Twin Bunk"
 	CrewQuarters3x1Icon = "Twin Bunk"
