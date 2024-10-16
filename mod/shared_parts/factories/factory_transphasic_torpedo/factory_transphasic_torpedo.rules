@@ -7,15 +7,18 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 	DescriptionKey = "Parts/FactoryTransphasicTorpedoPartDesc"
 	Resources
 	[
-		[steel, 96]
-		[tristeel, 24]
-		[coil2, 32]
-		[diamond, 4]
+		[steel, 246]
+		[tristeel, 72]
+		[coil, 128]
+		[coil2, 64]
+		[diamond, 12]
 	]
 	Size = [3, 4]
 	IsFlippable = true
 	SelectionPriority = 1
-	MaxHealth = 7000
+	MaxHealth = 4000
+	Density = 14
+	CrewSpeedFactor = 0.05
 	TypeCategories = [provides_transphasic_torpedo_part, uses_iron, uses_copper, uses_power, uses_antimatter, uses_processors]
 	ReceivableBuffs : ^/0/ReceivableBuffs [Factory]
 	AllowedDoorLocations
@@ -58,14 +61,15 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		{
 			Type = CommandConsumer
 			OperationalToggle = PowerToggle
-			CommandPoints = 1
+			CommandPoints = 25
 		}
 
 		IronStorage
 		{
-			Type = TypedResourceGrid
+			Type = ResourceStorage
 			ResourceType = iron
-			// MaxResources = 5
+			MaxResources = 50
+			UITileRect = [0, 2, 1, 1]
 			GridRect = [0, 2, 1, 1]
 			Layer = "doodads_low"
 			SpriteInset = [17/64, 9/64, 5/64, 5/64]
@@ -73,7 +77,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 		IronConsumer
 		{
-			Type = TypedResourceGridConsumer
+			Type = ResourceConsumer
 			ResourceType = iron
 			Storage = IronStorage
 			DefaultPriority = &/PRIORITIES/Factory_Supply
@@ -91,9 +95,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 
 		CopperStorage
 		{
-			Type = TypedResourceGrid
+			Type = ResourceStorage
 			ResourceType = copper
-			// MaxResources = 5
+			MaxResources = 50
+			UITileRect = [2, 2, 1, 1]
 			GridRect = [2, 2, 1, 1]
 			Layer = "doodads_low"
 			SpriteInset = [5/64, 9/64, 17/64, 5/64]
@@ -101,7 +106,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 		CopperConsumer
 		{
-			Type = TypedResourceGridConsumer
+			Type = ResourceConsumer
 			ResourceType = copper
 			Storage = CopperStorage
 			DefaultPriority = &/PRIORITIES/Factory_Supply
@@ -119,9 +124,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 
 		AntimatterStorage
 		{
-			Type = TypedResourceGrid
+			Type = ResourceStorage
 			ResourceType = antimatter
-			// MaxResources = 5
+			MaxResources = 50
+			UITileRect = [2, 3, 1, 1]
 			GridRect = [2, 3, 1, 1]
 			Layer = "doodads_low"
 			SpriteInset = [0/64, 0/64, 5/64, 5/64]
@@ -129,12 +135,12 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 		AntimatterConsumer
 		{
-			Type = TypedResourceGridConsumer
+			Type = ResourceConsumer
 			ResourceType = antimatter
 			Storage = AntimatterStorage
 			DefaultPriority = &/PRIORITIES/Factory_Supply
 			OperationalToggle = PowerToggle
-			ConsumptionToggleButtonOffset = [0, -.4]
+			ConsumptionToggleButtonOffset = [0, 1.4]
 		}
 		// AntimatterSplitter
 		// {
@@ -146,9 +152,10 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		// }
 		ProcessorStorage
 		{
-			Type = TypedResourceGrid
+			Type = ResourceStorage
 			ResourceType = processor
-			// MaxResources = 5
+			MaxResources = 50
+			UITileRect = [0, 3, 1, 1]//[.5 + 7/64, .4 + 7/64, 1 - 14/64, 1 - 14/64] , [0.61, 0.51, 0.78, 0.78]
 			GridRect = [0, 3, 1, 1]
 			Layer = "doodads_low"
 			SpriteInset = [14/64, 0/64, 5/64, 5/64]
@@ -156,12 +163,12 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		}
 		ProcessorConsumer
 		{
-			Type = TypedResourceGridConsumer
+			Type = ResourceConsumer
 			ResourceType = processor 
 			Storage = ProcessorStorage
 			DefaultPriority = &/PRIORITIES/Factory_Supply
 			OperationalToggle = PowerToggle
-			ConsumptionToggleButtonOffset = [0, -.4]
+			ConsumptionToggleButtonOffset = [0, 1.4]
 		}
 
 		TransphasicTorpedoPartStorage
@@ -204,24 +211,24 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 			[
 			    {
 			        Storage = IronStorage
-			        Quantity = 5
+			        Quantity = 50
 			    }
 			    {
 			        Storage = CopperStorage
-			        Quantity = 5
+			        Quantity = 50
 			    }
 				{
 					Storage = AntimatterStorage
-					Quantity = 5
+					Quantity = 50
 				}
 				{
 					Storage = ProcessorStorage
-					Quantity = 1
+					Quantity = 50
 				}
-
+				
 			    {
 			        Storage = BatteryStorage
-			        Quantity = 50000
+			        Quantity = 500000
 			        MinQuantityForConversion = 1
 			    }
 			]
@@ -693,7 +700,7 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 		BeltSpeedFactor
         {
         	Type = BuffableValue
-        	Value = { BaseValue=1; BuffType=Factory; BuffMode=Multiply; }
+        	Value = { BaseValue=0.00789473684; BuffType=Factory; BuffMode=Multiply; }
         }
 
 		Graphics
@@ -1217,27 +1224,29 @@ Part : <./Data/ships/terran/base_part_terran.rules>/Part
 
 	Stats
 	{
-		PartsPerMissile = 10
+		PartsPerMissile = 20
 		MissileProduction = (&~/Part/Components/ResourceConverter/ToQuantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue) / (&PartsPerMissile)
-		PartCapacity = (&~/Part/Components/TransphasicTorpedoPartStorage/GridRect/2) * (&~/Part/Components/TransphasicTorpedoPartStorage/GridRect/3) * (&<./Data/resources/missile_part_emp/missile_part_emp.rules>/MaxStackSize)
+		PartCapacity = (&~/Part/Components/TransphasicTorpedoPartStorage/GridRect/2) * (&~/Part/Components/TransphasicTorpedoPartStorage/GridRect/3) * (&<../../../resources/transphasic_torpedo_part/transphasic_torpedo_part.rules>/MaxStackSize)
 		MissilePartCapacity = [&../PartCapacity, (&../PartCapacity) / (&../PartsPerMissile)]
-		IronCapacity = 5
-		IronPerMissile = 5
-		IronPerSecond = 5 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
+		IronCapacity = 50
+		IronPerMissile = 50
+		IronPerSecond = 50 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
 		MissileIronUsage = [&../IronPerMissile, &../IronPerSecond]
-		AntimatterCapacity = 5
-		AntimatterPerMissile = 5
-		AntimatterPerSecond = 5 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
-		ProcessorCapacity = 5
-		ProcessorPerMissile = 1	
-		ProcessorPerSecond = 1 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
-		CopperCapacity = 5
-		CopperPerMissile = 5
-		CopperPerSecond = 5 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
+		AntimatterCapacity = 50
+		AntimatterPerMissile = 50
+		AntimatterPerSecond = 50 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
+		ProcessorCapacity = 50
+		ProcessorsPerMissile = 50	
+		ProcessorsPerSecond = 50 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
+		CopperCapacity = 50
+		CopperPerMissile = 50
+		CopperPerSecond = 50 / (&~/Part/Components/ResourceConverter/Interval/BaseValue)
 		MissileCopperUsage = [&../CopperPerMissile, &../CopperPerSecond]
+		MissileProcessorsUsage = [&../ProcessorsPerMissile, &../ProcessorsPerSecond]
+		MissileAntimatterUsage = [&../AntimatterPerMissile, &../AntimatterPerSecond]
 
-		PowerPerMissile = (&~/Part/Components/ResourceConverter/From/2/Quantity) / (&~/Part/Components/ResourceConverter/ToQuantity) * (&PartsPerMissile) / 1000
-		PowerPerSecond = (&~/Part/Components/ResourceConverter/From/2/Quantity) / (&~/Part/Components/ResourceConverter/Interval/BaseValue) / 1000
+		PowerPerMissile = 500000 / (&~/Part/Components/ResourceConverter/ToQuantity) * (&PartsPerMissile) / 1000
+		PowerPerSecond = 500000 / 60 / 1000
 		MissilePowerUsage = [&../PowerPerMissile, &../PowerPerSecond]
 		PowerCapacity = (&~/Part/Components/BatteryStorage/MaxResources) / 1000
 
