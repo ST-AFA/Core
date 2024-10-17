@@ -10,7 +10,7 @@ Description = "For full details please see Steamworkshop\n\n"\
 			  "- replaces FTL jump sound with warp sounds\n"\
 			  "- adds Starfleet editor group\n"\
 			  "- adds some buffs to the game\n"\
-			  "- adds new resource: torpedo parts and factory\n"\
+			  "- adds new resource: torpedo parts and factories\n"\
 			  "- adds new resource: antimatter (and factory WIP)\n"\
 			  "- adds new resource: dilithium crystals\n"
 StringsFolder = "strings"
